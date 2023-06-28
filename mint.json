@@ -7,19 +7,19 @@
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#12A7D3",
-    "light": "#81D7F7",
+    "primary": "#2D6BFA",
+    "light": "#2D6BFA",
     "dark": "#004E7A"
   },
   "topbarLinks": [
     {
-      "name": "Documentation",
-      "url": "https://mintlify.com/docs"
+      "name": "Signup",
+      "url": "https://poozle.dev"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "type": "github",
+    "url": "https://github.com/poozlehq/engine"
   },
   "tabs": [
     {
@@ -30,15 +30,15 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
+      "pages": [ "introduction", "quickstart", "development" ]
     },
     {
       "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
+      "pages": [ "essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation" ]
     },
     {
       "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
+      "pages": [ "api-reference/authentication" ]
     },
     {
       "group": "Endpoint Examples",
@@ -51,9 +51,10 @@
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com/poozlehq",
+    "github": "https://github.com/poozlehq/engine",
+    "linkedin": "https://www.linkedin.com/company/poozle",
+    "website": "http://poozle.dev"
   },
   "backgroundImage": "/background.png"
 }
