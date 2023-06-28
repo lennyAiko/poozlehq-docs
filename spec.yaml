@@ -5,8 +5,8 @@ paths:
       operationId: AppController_health
       parameters: []
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
   /v1/user:
     post:
       operationId: UserController_createUser
@@ -16,26 +16,26 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateUserInput'
+              $ref: "#/components/schemas/CreateUserInput"
       responses:
-        '201':
-          description: ''
+        "201":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: "#/components/schemas/User"
       tags: &ref_0
         - User
     get:
       operationId: UserController_getUser
       parameters: []
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: "#/components/schemas/User"
       tags: *ref_0
   /v1/integration_account/check:
     post:
@@ -46,10 +46,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/IntegrationCheckBody'
+              $ref: "#/components/schemas/IntegrationCheckBody"
       responses:
-        '201':
-          description: ''
+        "201":
+          description: ""
           content:
             application/json:
               schema:
@@ -66,14 +66,14 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/IntegrationAccount'
+                  $ref: "#/components/schemas/IntegrationAccount"
       tags: *ref_1
     post:
       operationId: IntegrationAccountController_createIntegrationAccount
@@ -83,14 +83,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateIntegrationAccountBody'
+              $ref: "#/components/schemas/CreateIntegrationAccountBody"
       responses:
-        '201':
-          description: ''
+        "201":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IntegrationAccount'
+                $ref: "#/components/schemas/IntegrationAccount"
       tags: *ref_1
   /v1/integration_account/{integrationAccountId}:
     get:
@@ -102,12 +102,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IntegrationAccount'
+                $ref: "#/components/schemas/IntegrationAccount"
       tags: *ref_1
     post:
       operationId: IntegrationAccountController_updateIntegrationAccount
@@ -122,14 +122,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateIntegrationAccountBody'
+              $ref: "#/components/schemas/UpdateIntegrationAccountBody"
       responses:
-        '201':
-          description: ''
+        "201":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IntegrationAccount'
+                $ref: "#/components/schemas/IntegrationAccount"
       tags: *ref_1
   /v1/integration_definition:
     get:
@@ -141,14 +141,14 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/IntegrationDefinition'
+                  $ref: "#/components/schemas/IntegrationDefinition"
       tags: &ref_2
         - Integration Definition
   /v1/integration_definition/{integrationDefinitionId}/spec:
@@ -166,8 +166,8 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
@@ -188,8 +188,8 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
@@ -205,14 +205,14 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/IntegrationOAuthApp'
+                  $ref: "#/components/schemas/IntegrationOAuthApp"
       tags: &ref_3
         - Integration OAuth Apps
     post:
@@ -223,14 +223,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/IntegrationOAuthCreateBody'
+              $ref: "#/components/schemas/IntegrationOAuthCreateBody"
       responses:
-        '201':
-          description: ''
+        "201":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IntegrationOAuthApp'
+                $ref: "#/components/schemas/IntegrationOAuthApp"
       tags: *ref_3
   /v1/integration_oauth/{integrationOAuthAppId}:
     post:
@@ -246,14 +246,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/IntegrationOAuthRequestUpdateBody'
+              $ref: "#/components/schemas/IntegrationOAuthRequestUpdateBody"
       responses:
-        '201':
-          description: ''
+        "201":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IntegrationOAuthApp'
+                $ref: "#/components/schemas/IntegrationOAuthApp"
       tags: *ref_3
     get:
       operationId: IntegrationOAuthController_getIntegrationOAuthApp
@@ -269,12 +269,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IntegrationOAuthApp'
+                $ref: "#/components/schemas/IntegrationOAuthApp"
       tags: *ref_3
   /v1/integration_connect_link/{integrationConnectLinkId}:
     get:
@@ -291,12 +291,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IntegrationConnectLink'
+                $ref: "#/components/schemas/IntegrationConnectLink"
       tags: &ref_4
         - Integration Connect Link
   /v1/integration_connect_link:
@@ -309,14 +309,14 @@ paths:
           schema:
             type: string
       responses:
-        '201':
-          description: ''
+        "201":
+          description: ""
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/IntegrationConnectLink'
+                  $ref: "#/components/schemas/IntegrationConnectLink"
       tags: *ref_4
   /v1/ticketing/collections:
     get:
@@ -343,12 +343,12 @@ paths:
           schema:
             type: number
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TicketingCollectionsResponse'
+                $ref: "#/components/schemas/TicketingCollectionsResponse"
       tags: &ref_5
         - Ticketing
   /v1/ticketing/collections/{collection_id}:
@@ -366,12 +366,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TicketingCollectionResponse'
+                $ref: "#/components/schemas/TicketingCollectionResponse"
       tags: *ref_5
   /v1/ticketing/{collection_id}/users/{user_id}:
     get:
@@ -393,12 +393,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TicketingUserResponse'
+                $ref: "#/components/schemas/TicketingUserResponse"
       tags: &ref_6
         - Ticketing
   /v1/ticketing/{collection_id}/users:
@@ -431,12 +431,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TicketingUsersResponse'
+                $ref: "#/components/schemas/TicketingUsersResponse"
       tags: *ref_6
   /v1/ticketing/{collection_id}/tickets:
     get:
@@ -468,12 +468,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TicketingTicketsResponse'
+                $ref: "#/components/schemas/TicketingTicketsResponse"
       tags: &ref_7
         - Ticketing
     post:
@@ -505,12 +505,12 @@ paths:
           schema:
             type: string
       responses:
-        '201':
-          description: ''
+        "201":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TicketingTicketsResponse'
+                $ref: "#/components/schemas/TicketingTicketsResponse"
       tags: *ref_7
   /v1/ticketing/{collection_id}/tickets/{ticket_id}:
     get:
@@ -532,17 +532,17 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TicketingTicketResponse'
+                $ref: "#/components/schemas/TicketingTicketResponse"
       tags: *ref_7
 info:
   title: Poozle
   description: The poozle API description
-  version: '1.0'
+  version: "1.0"
   contact: {}
 tags: []
 servers: []
@@ -581,7 +581,7 @@ components:
         Workspace:
           type: array
           items:
-            $ref: '#/components/schemas/Workspace'
+            $ref: "#/components/schemas/Workspace"
       required:
         - userId
         - createdAt
@@ -609,7 +609,7 @@ components:
         IntegrationAccount:
           type: array
           items:
-            $ref: '#/components/schemas/IntegrationAccount'
+            $ref: "#/components/schemas/IntegrationAccount"
       required:
         - integrationConnectionLinkId
         - expiresIn
@@ -622,7 +622,7 @@ components:
         integrationAccountId:
           type: string
         integrationDefinition:
-          $ref: '#/components/schemas/IntegrationDefinition'
+          $ref: "#/components/schemas/IntegrationDefinition"
         integrationDefinitionId:
           type: string
         integrationConfiguration:
@@ -631,7 +631,7 @@ components:
         authType:
           type: string
         workspace:
-          $ref: '#/components/schemas/Workspace'
+          $ref: "#/components/schemas/Workspace"
         workspaceId:
           type: string
         integrationAccountName:
@@ -649,7 +649,7 @@ components:
         fromLinks:
           nullable: true
           allOf:
-            - $ref: '#/components/schemas/IntegrationConnectLink'
+            - $ref: "#/components/schemas/IntegrationConnectLink"
         integrationConnectLinkIntegrationConnectionLinkId:
           type: string
           nullable: true
@@ -672,7 +672,7 @@ components:
         integrationOAuthAppName:
           type: string
         integrationDefinition:
-          $ref: '#/components/schemas/IntegrationDefinition'
+          $ref: "#/components/schemas/IntegrationDefinition"
         integrationDefinitionId:
           type: string
         clientId:
@@ -684,7 +684,7 @@ components:
         workspace:
           nullable: true
           allOf:
-            - $ref: '#/components/schemas/Workspace'
+            - $ref: "#/components/schemas/Workspace"
         workspaceId:
           type: string
           nullable: true
@@ -730,18 +730,18 @@ components:
         workspace:
           nullable: true
           allOf:
-            - $ref: '#/components/schemas/Workspace'
+            - $ref: "#/components/schemas/Workspace"
         workspaceId:
           type: string
           nullable: true
         IntegrationAccount:
           type: array
           items:
-            $ref: '#/components/schemas/IntegrationAccount'
+            $ref: "#/components/schemas/IntegrationAccount"
         IntegrationOAuthApp:
           type: array
           items:
-            $ref: '#/components/schemas/IntegrationOAuthApp'
+            $ref: "#/components/schemas/IntegrationOAuthApp"
         deleted:
           format: date-time
           type: string
@@ -771,8 +771,6 @@ components:
           type: string
         slug:
           type: string
-        user:
-          $ref: '#/components/schemas/User'
         userId:
           type: string
         initialSetupComplete:
@@ -782,15 +780,15 @@ components:
         IntegrationDefinition:
           type: array
           items:
-            $ref: '#/components/schemas/IntegrationDefinition'
+            $ref: "#/components/schemas/IntegrationDefinition"
         IntegrationAccount:
           type: array
           items:
-            $ref: '#/components/schemas/IntegrationAccount'
+            $ref: "#/components/schemas/IntegrationAccount"
         IntegrationOAuthApp:
           type: array
           items:
-            $ref: '#/components/schemas/IntegrationOAuthApp'
+            $ref: "#/components/schemas/IntegrationOAuthApp"
         deleted:
           format: date-time
           type: string
@@ -933,7 +931,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/Collection'
+            $ref: "#/components/schemas/Collection"
         meta:
           type: object
       required:
@@ -943,7 +941,7 @@ components:
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/Collection'
+          $ref: "#/components/schemas/Collection"
       required:
         - data
     TicketingUser:
@@ -978,7 +976,7 @@ components:
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/TicketingUser'
+          $ref: "#/components/schemas/TicketingUser"
       required:
         - data
     TicketingUsersResponse:
@@ -987,7 +985,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/TicketingUser'
+            $ref: "#/components/schemas/TicketingUser"
         meta:
           type: object
       required:
@@ -1055,7 +1053,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/Ticket'
+            $ref: "#/components/schemas/Ticket"
         meta:
           type: object
       required:
@@ -1065,6 +1063,6 @@ components:
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/Ticket'
+          $ref: "#/components/schemas/Ticket"
       required:
         - data
