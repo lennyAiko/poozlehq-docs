@@ -37,6 +37,10 @@
       "pages": [ "oss/deploy-poozle" ]
     },
     {
+      "group": "Contributing",
+      "pages": [ "contributing/code-of-conduct", "contributing/issues-prs" ]
+    },
+    {
       "group": "API Documentation",
       "pages": [ "api-reference/overview", "api-reference/authentication" ]
     }
