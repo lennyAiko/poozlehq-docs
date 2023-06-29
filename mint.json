@@ -43,6 +43,18 @@
     {
       "group": "API Documentation",
       "pages": [ "api-reference/overview", "api-reference/authentication" ]
+    },
+    {
+      "group": "User",
+      "pages": [ "api-reference/user/get" ]
+    },
+    {
+      "group": "Integration Account",
+      "pages": [ "api-reference/integration_account/get_integration_accounts", "api-reference/integration_account/get_integration_account", "api-reference/integration_account/create_integration_account", "api-reference/integration_account/check" ]
+    },
+    {
+      "group": "Integration Definition",
+      "pages": [ "api-reference/integration_definition/get_integration_definitions", "api-reference/integration_definition/get_integration_definition", "api-reference/integration_definition/create_integration_definition", "api-reference/integration_definition/spec" ]
     }
   ],
   "footerSocials": {
@@ -51,5 +63,11 @@
     "linkedin": "https://www.linkedin.com/company/poozle",
     "website": "http://poozle.dev"
   },
-  "backgroundImage": "/background.png"
+  "backgroundImage": "/background.png",
+  "api": {
+    "auth": {
+      "method": "bearer"
+    }
+  }
+
 }
