@@ -23,8 +23,12 @@
   },
   "tabs": [
     {
-      "name": "API Reference",
+      "name": "Common API Reference",
       "url": "api-reference"
+    },
+    {
+      "name": "Ticketing",
+      "url": "ticketing"
     }
   ],
   "navigation": [
@@ -55,6 +59,30 @@
     {
       "group": "Integration Definition",
       "pages": [ "api-reference/integration_definition/get_integration_definitions", "api-reference/integration_definition/get_integration_definition", "api-reference/integration_definition/create_integration_definition", "api-reference/integration_definition/spec" ]
+    },
+    {
+      "group": "Collection",
+      "pages": [ "ticketing/collection/get_collections", "ticketing/collection/get_collection" ]
+    },
+    {
+      "group": "User",
+      "pages": [ "ticketing/user/get_users", "ticketing/user/get_user" ]
+    },
+    {
+      "group": "Ticket",
+      "pages": [ "ticketing/ticket/get_tickets", "ticketing/ticket/get_ticket", "ticketing/ticket/create_ticket", "ticketing/ticket/update_ticket" ]
+    },
+    {
+      "group": "Comment",
+      "pages": [ "ticketing/comment/get_comments", "ticketing/comment/get_comment", "ticketing/comment/create_comment", "ticketing/comment/update_comment" ]
+    },
+    {
+      "group": "Team",
+      "pages": [ "ticketing/team/get_teams", "ticketing/team/get_team", "ticketing/team/create_team", "ticketing/team/update_team" ]
+    },
+    {
+      "group": "Tag",
+      "pages": [ "ticketing/tag/get_tags", "ticketing/tag/get_tag", "ticketing/tag/create_tag", "ticketing/tag/update_tag" ]
     }
   ],
   "footerSocials": {
