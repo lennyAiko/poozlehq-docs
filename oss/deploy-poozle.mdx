@@ -12,6 +12,22 @@ cd engine
 docker-compose up
 ```
 
+3. Create user using the following command
+
+```bash
+docker-compose run server yarn create-default-user
+```
+
+<Note>
+  For the above command to work you need to set `USER_PASSWORD`, `USER_EMAIL`
+  and `CREATE_DEFAULT_USER` variables set in the .env file.
+
+Also you will use the above to login
+
+</Note>
+
+4. You can now check poozle at `http://localhost:8000`
+
 ## FAQ
 
-If there are any questions that we couldn't answer here, we'd love to help you get started. [Join our Slack](https://join.slack.com/t/poozle-community/shared_invite/zt-1u4mz911h-FeWpOA82wA8kyrz3xg58xQ) and feel free to ask your questions in the #getting-started channel.
+If there are any questions that we couldn't answer here, we'd love to help you get started. [Join our Slack](https://join.slack.com/t/poozle-community/shared_invite/zt-1u4mz911h-FeWpOA82wA8kyrz3xg58xQ) and feel free to ask your questions in the #support channel.
