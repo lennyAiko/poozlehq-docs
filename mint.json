@@ -61,6 +61,14 @@
       "pages": [ "api-reference/integration_definition/get_integration_definitions", "api-reference/integration_definition/get_integration_definition", "api-reference/integration_definition/create_integration_definition", "api-reference/integration_definition/spec" ]
     },
     {
+      "group": "Get Started",
+      "pages": [ "ticketing/overview" ]
+    },
+    {
+      "group": "Integrations",
+      "pages": [ "ticketing/integrations/github", "ticketing/integrations/jira" ]
+    },
+    {
       "group": "Collection",
       "pages": [ "ticketing/collection/get_collections", "ticketing/collection/get_collection" ]
     },
@@ -93,6 +101,7 @@
   },
   "backgroundImage": "/background.png",
   "api": {
+    "baseUrl": "http://localhost:8000/api",
     "auth": {
       "method": "bearer"
     }
