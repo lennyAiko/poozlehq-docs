@@ -6,25 +6,27 @@ description: "Deploying Poozle Open-Source just takes two steps."
 1. Install Docker on your workstation (see instructions). Make sure you're on the latest version of docker-compose.
 2. Run the following commands in your terminal:
 
+<Note>
+  Set `USER_PASSWORD`, `USER_EMAIL`, `USER_FIRSTNAME`, `USER_LASTNAME` and
+  `CREATE_DEFAULT_USER` variables in the .env file so that you can create a
+  default user.
+</Note>
+
 ```bash
 git clone https://github.com/poozlehq/engine.git
 cd engine
-docker-compose up
+docker-compose up -d
 ```
 
-3. Create user using the following command
+3. Wait for server to start. You can look for this log in the server logs `Nest application successfully started`.
+4. Create user using the following commands
+
+<Note>You can get server container id using `docker ps`</Note>
 
 ```bash
-docker-compose run server yarn create-default-user
+docker exec -it <server-container-id> sh
+yarn create-default-user
 ```
-
-<Note>
-  For the above command to work you need to set `USER_PASSWORD`, `USER_EMAIL`
-  and `CREATE_DEFAULT_USER` variables set in the .env file.
-
-Also you will use the above to login
-
-</Note>
 
 4. You can now check poozle at `http://localhost:8000`
 
