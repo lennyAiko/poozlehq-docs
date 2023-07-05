@@ -66,11 +66,19 @@
     },
     {
       "group": "Get Started",
-      "pages": [ "ticketing/overview", "mail/overview" ]
+      "pages": [ "ticketing/overview" ]
+    },
+    {
+      "group": "Get Started",
+      "pages": [ "mail/overview" ]
     },
     {
       "group": "Integrations",
-      "pages": [ "ticketing/integrations/github", "ticketing/integrations/jira", "mail/integration/gmail" ]
+      "pages": [ "ticketing/integrations/github", "ticketing/integrations/jira" ]
+    },
+    {
+      "group": "Integrations",
+      "pages": [ "mail/integrations/gmail" ]
     },
     {
       "group": "Collection",
@@ -98,11 +106,11 @@
     },
     {
       "group": "Message",
-      "pages": ["mail/messages/get_messages", "mail/messages/get_message", "mail/messages/create_message"]
+      "pages": [ "mail/messages/get_messages", "mail/messages/get_message", "mail/messages/create_message" ]
     },
     {
       "group": "Threads",
-      "pages": ["mail/threads/get_threads", "mail/threads/get_thread"]
+      "pages": [ "mail/threads/get_threads", "mail/threads/get_thread" ]
     }
   ],
   "footerSocials": {
