@@ -4,19 +4,25 @@
     "/health": {
       "get": {
         "operationId": "AppController_health",
-        "parameters": [ ],
-        "responses": { "200": { "description": "" } }
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
       }
     },
     "/v1/user": {
       "post": {
         "operationId": "UserController_createUser",
-        "parameters": [ ],
+        "parameters": [],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateUserInput" }
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserInput"
+              }
             }
           }
         },
@@ -25,38 +31,48 @@
             "description": "",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/User" }
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
               }
             }
           }
         },
-        "tags": [ "User" ]
+        "tags": [
+          "User"
+        ]
       },
       "get": {
         "operationId": "UserController_getUser",
-        "parameters": [ ],
+        "parameters": [],
         "responses": {
           "200": {
             "description": "",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/User" }
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
               }
             }
           }
         },
-        "tags": [ "User" ]
+        "tags": [
+          "User"
+        ]
       }
     },
     "/v1/user/token": {
       "post": {
         "operationId": "UserController_createJWT",
-        "parameters": [ ],
+        "parameters": [],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateTokenBody" }
+              "schema": {
+                "$ref": "#/components/schemas/CreateTokenBody"
+              }
             }
           }
         },
@@ -64,11 +80,17 @@
           "201": {
             "description": "",
             "content": {
-              "application/json": { "schema": { "type": "string" } }
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             }
           }
         },
-        "tags": [ "User" ]
+        "tags": [
+          "User"
+        ]
       }
     },
     "/v1/integration_account": {
@@ -79,7 +101,9 @@
             "name": "workspaceId",
             "required": true,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -89,17 +113,21 @@
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "items": { "$ref": "#/components/schemas/IntegrationAccount" }
+                  "items": {
+                    "$ref": "#/components/schemas/IntegrationAccount"
+                  }
                 }
               }
             }
           }
         },
-        "tags": [ "Integration Account" ]
+        "tags": [
+          "Integration Account"
+        ]
       },
       "post": {
         "operationId": "IntegrationAccountController_createIntegrationAccount",
-        "parameters": [ ],
+        "parameters": [],
         "requestBody": {
           "required": true,
           "content": {
@@ -115,12 +143,16 @@
             "description": "",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/IntegrationAccount" }
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationAccount"
+                }
               }
             }
           }
         },
-        "tags": [ "Integration Account" ]
+        "tags": [
+          "Integration Account"
+        ]
       }
     },
     "/v1/integration_account/{integrationAccountId}": {
@@ -131,7 +163,9 @@
             "name": "integrationAccountId",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -139,12 +173,16 @@
             "description": "",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/IntegrationAccount" }
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationAccount"
+                }
               }
             }
           }
         },
-        "tags": [ "Integration Account" ]
+        "tags": [
+          "Integration Account"
+        ]
       },
       "post": {
         "operationId": "IntegrationAccountController_updateIntegrationAccount",
@@ -153,7 +191,9 @@
             "name": "integrationAccountId",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -171,23 +211,29 @@
             "description": "",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/IntegrationAccount" }
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationAccount"
+                }
               }
             }
           }
         },
-        "tags": [ "Integration Account" ]
+        "tags": [
+          "Integration Account"
+        ]
       }
     },
     "/v1/integration_account/check": {
       "post": {
         "operationId": "IntegrationAccountController_checkCredentialsForIntegrationAccount",
-        "parameters": [ ],
+        "parameters": [],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/IntegrationCheckBody" }
+              "schema": {
+                "$ref": "#/components/schemas/IntegrationCheckBody"
+              }
             }
           }
         },
@@ -195,11 +241,17 @@
           "201": {
             "description": "",
             "content": {
-              "application/json": { "schema": { "type": "object" } }
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
             }
           }
         },
-        "tags": [ "Integration Account" ]
+        "tags": [
+          "Integration Account"
+        ]
       }
     },
     "/v1/integration_account/{integrationAccountId}/proxy": {
@@ -210,14 +262,18 @@
             "name": "integrationAccountId",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/ProxyBody" }
+              "schema": {
+                "$ref": "#/components/schemas/ProxyBody"
+              }
             }
           }
         },
@@ -225,11 +281,17 @@
           "201": {
             "description": "",
             "content": {
-              "application/json": { "schema": { "type": "object" } }
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
             }
           }
         },
-        "tags": [ "Integration Account" ]
+        "tags": [
+          "Integration Account"
+        ]
       }
     },
     "/v1/integration_definition": {
@@ -240,7 +302,9 @@
             "name": "workspaceId",
             "required": true,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -258,11 +322,13 @@
             }
           }
         },
-        "tags": [ "Integration Definition" ]
+        "tags": [
+          "Integration Definition"
+        ]
       },
       "post": {
         "operationId": "IntegrationDefinitionController_createIntegrationDefinition",
-        "parameters": [ ],
+        "parameters": [],
         "requestBody": {
           "required": true,
           "content": {
@@ -285,7 +351,9 @@
             }
           }
         },
-        "tags": [ "Integration Definition" ]
+        "tags": [
+          "Integration Definition"
+        ]
       }
     },
     "/v1/integration_definition/{integrationDefinitionId}/spec": {
@@ -296,24 +364,34 @@
             "name": "integrationDefinitionId",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "workspaceId",
             "required": true,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
             "description": "",
             "content": {
-              "application/json": { "schema": { "type": "object" } }
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
             }
           }
         },
-        "tags": [ "Integration Definition" ]
+        "tags": [
+          "Integration Definition"
+        ]
       }
     },
     "/v1/integration_definition/{integrationDefinitionId}": {
@@ -324,24 +402,34 @@
             "name": "integrationDefinitionId",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "workspaceId",
             "required": true,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
             "description": "",
             "content": {
-              "application/json": { "schema": { "type": "object" } }
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
             }
           }
         },
-        "tags": [ "Integration Definition" ]
+        "tags": [
+          "Integration Definition"
+        ]
       }
     },
     "/v1/integration_oauth": {
@@ -352,7 +440,9 @@
             "name": "workspaceId",
             "required": true,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -370,11 +460,13 @@
             }
           }
         },
-        "tags": [ "Integration OAuth Apps" ]
+        "tags": [
+          "Integration OAuth Apps"
+        ]
       },
       "post": {
         "operationId": "IntegrationOAuthController_createIntegrationOAuthApp",
-        "parameters": [ ],
+        "parameters": [],
         "requestBody": {
           "required": true,
           "content": {
@@ -390,12 +482,16 @@
             "description": "",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/IntegrationOAuthApp" }
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationOAuthApp"
+                }
               }
             }
           }
         },
-        "tags": [ "Integration OAuth Apps" ]
+        "tags": [
+          "Integration OAuth Apps"
+        ]
       }
     },
     "/v1/integration_oauth/{integrationOAuthAppId}": {
@@ -406,7 +502,9 @@
             "name": "integrationOAuthAppId",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -424,12 +522,16 @@
             "description": "",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/IntegrationOAuthApp" }
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationOAuthApp"
+                }
               }
             }
           }
         },
-        "tags": [ "Integration OAuth Apps" ]
+        "tags": [
+          "Integration OAuth Apps"
+        ]
       },
       "get": {
         "operationId": "IntegrationOAuthController_getIntegrationOAuthApp",
@@ -438,13 +540,17 @@
             "name": "integrationOAuthAppId",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "workspaceId",
             "required": true,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -452,12 +558,16 @@
             "description": "",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/IntegrationOAuthApp" }
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationOAuthApp"
+                }
               }
             }
           }
         },
-        "tags": [ "Integration OAuth Apps" ]
+        "tags": [
+          "Integration OAuth Apps"
+        ]
       }
     },
     "/v1/integration_connect_link/{integrationConnectLinkId}": {
@@ -468,13 +578,17 @@
             "name": "integrationConnectLinkId",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "workspaceId",
             "required": true,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -489,7 +603,9 @@
             }
           }
         },
-        "tags": [ "Integration Connect Link" ]
+        "tags": [
+          "Integration Connect Link"
+        ]
       }
     },
     "/v1/integration_connect_link": {
@@ -500,7 +616,9 @@
             "name": "workspaceId",
             "required": true,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -518,7 +636,9 @@
             }
           }
         },
-        "tags": [ "Integration Connect Link" ]
+        "tags": [
+          "Integration Connect Link"
+        ]
       }
     },
     "/v1/ticketing/collections": {
@@ -529,31 +649,41 @@
             "name": "sort",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "direction",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "cursor",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "limit",
             "required": false,
             "in": "query",
-            "schema": { "type": "number" }
+            "schema": {
+              "type": "number"
+            }
           }
         ],
         "responses": {
@@ -568,7 +698,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       }
     },
     "/v1/ticketing/collections/{collection_id}": {
@@ -579,13 +711,17 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -600,7 +736,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       }
     },
     "/v1/ticketing/{collection_id}/users/{user_id}": {
@@ -611,19 +749,25 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "user_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -638,7 +782,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       }
     },
     "/v1/ticketing/{collection_id}/users": {
@@ -649,25 +795,33 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "cursor",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "limit",
             "required": false,
             "in": "query",
-            "schema": { "type": "number" }
+            "schema": {
+              "type": "number"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -682,7 +836,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       }
     },
     "/v1/ticketing/teams": {
@@ -693,31 +849,41 @@
             "name": "sort",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "direction",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "cursor",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "limit",
             "required": false,
             "in": "query",
-            "schema": { "type": "number" }
+            "schema": {
+              "type": "number"
+            }
           }
         ],
         "responses": {
@@ -732,7 +898,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       },
       "post": {
         "operationId": "TeamController_createTeam",
@@ -741,14 +909,18 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateTeamBody" }
+              "schema": {
+                "$ref": "#/components/schemas/CreateTeamBody"
+              }
             }
           }
         },
@@ -764,7 +936,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       }
     },
     "/v1/ticketing/teams/{team_name}": {
@@ -775,13 +949,17 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "team_name",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -796,7 +974,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       },
       "patch": {
         "operationId": "TeamController_patchTeam",
@@ -805,20 +985,26 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "team_name",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/UpdateTeamBody" }
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTeamBody"
+              }
             }
           }
         },
@@ -834,7 +1020,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       }
     },
     "/v1/ticketing/{collection_id}/tickets": {
@@ -845,55 +1033,73 @@
             "name": "sort",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "direction",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "status",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "since",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "assignee_id",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "cursor",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "limit",
             "required": false,
             "in": "query",
-            "schema": { "type": "number" }
+            "schema": {
+              "type": "number"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -908,7 +1114,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       },
       "post": {
         "operationId": "TicketsController_createTicket",
@@ -917,20 +1125,26 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateTicketBody" }
+              "schema": {
+                "$ref": "#/components/schemas/CreateTicketBody"
+              }
             }
           }
         },
@@ -946,7 +1160,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       }
     },
     "/v1/ticketing/{collection_id}/tickets/{ticket_id}": {
@@ -957,61 +1173,81 @@
             "name": "sort",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "direction",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "status",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "since",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "assignee_id",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "cursor",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "limit",
             "required": false,
             "in": "query",
-            "schema": { "type": "number" }
+            "schema": {
+              "type": "number"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "ticket_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1026,7 +1262,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       },
       "patch": {
         "operationId": "TicketsController_patchTicket",
@@ -1035,26 +1273,34 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "ticket_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/UpdateTicketBody" }
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTicketBody"
+              }
             }
           }
         },
@@ -1070,7 +1316,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       }
     },
     "/v1/ticketing/{collection_id}/tickets/{ticket_id}/comments": {
@@ -1081,43 +1329,57 @@
             "name": "sort",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "direction",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "cursor",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "limit",
             "required": false,
             "in": "query",
-            "schema": { "type": "number" }
+            "schema": {
+              "type": "number"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "ticket_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1132,7 +1394,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       },
       "post": {
         "operationId": "CommentController_createComment",
@@ -1141,26 +1405,34 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "ticket_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateCommentBody" }
+              "schema": {
+                "$ref": "#/components/schemas/CreateCommentBody"
+              }
             }
           }
         },
@@ -1176,7 +1448,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       }
     },
     "/v1/ticketing/{collection_id}/tickets/{ticket_id}/comments/{comment_id}": {
@@ -1187,25 +1461,33 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "comment_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "ticket_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1220,7 +1502,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       },
       "patch": {
         "operationId": "CommentController_patchComment",
@@ -1229,32 +1513,42 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "comment_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "ticket_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/UpdateCommentBody" }
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCommentBody"
+              }
             }
           }
         },
@@ -1270,7 +1564,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       }
     },
     "/v1/ticketing/{collection_id}/tags": {
@@ -1281,25 +1577,33 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "cursor",
             "required": false,
             "in": "query",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "limit",
             "required": false,
             "in": "query",
-            "schema": { "type": "number" }
+            "schema": {
+              "type": "number"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1314,7 +1618,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       },
       "post": {
         "operationId": "TagController_createTag",
@@ -1323,20 +1629,26 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateTagBody" }
+              "schema": {
+                "$ref": "#/components/schemas/CreateTagBody"
+              }
             }
           }
         },
@@ -1352,7 +1664,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       }
     },
     "/v1/ticketing/{collection_id}/tags/{tag_id}": {
@@ -1363,19 +1677,25 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
-            "name": "tag_id",
+            "name": "tag_name",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1390,7 +1710,9 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
       },
       "patch": {
         "operationId": "TagController_patchTag",
@@ -1399,26 +1721,34 @@
             "name": "raw",
             "required": false,
             "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
-            "name": "tag_id",
+            "name": "tag_name",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "collection_id",
             "required": true,
             "in": "path",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/UpdateTagBody" }
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTagBody"
+              }
             }
           }
         },
@@ -1434,7 +1764,509 @@
             }
           }
         },
-        "tags": [ "Ticketing" ]
+        "tags": [
+          "Ticketing"
+        ]
+      }
+    },
+    "/v1/mail/messages": {
+      "get": {
+        "operationId": "MessagesController_getMessages",
+        "parameters": [
+          {
+            "name": "received_after",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "received_before",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subject",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "from",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "to",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cc",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "bcc",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "labes",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "starred",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "unread",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "direction",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "raw",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "cursor",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MailMessagesResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Mail"
+        ]
+      },
+      "post": {
+        "operationId": "MessagesController_sendMessage",
+        "parameters": [
+          {
+            "name": "raw",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMessageBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MailMessageResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Mail"
+        ]
+      }
+    },
+    "/v1/mail/messages/{message_id}": {
+      "get": {
+        "operationId": "MessagesController_getMessageId",
+        "parameters": [
+          {
+            "name": "received_after",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "received_before",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subject",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "from",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "to",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cc",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "bcc",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "labes",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "starred",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "unread",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "direction",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "raw",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "cursor",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "message_id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MailMessageResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Mail"
+        ]
+      }
+    },
+    "/v1/mail/threads": {
+      "get": {
+        "operationId": "ThreadsController_getThreads",
+        "parameters": [
+          {
+            "name": "started_after",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "started_before",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "last_updated_before",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "last_updated_after",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assignee_id",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "raw",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "cursor",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MailThreadsResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Mail"
+        ]
+      }
+    },
+    "/v1/mail/threads/{thread_id}": {
+      "get": {
+        "operationId": "ThreadsController_getThreadId",
+        "parameters": [
+          {
+            "name": "started_after",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "started_before",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "last_updated_before",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "last_updated_after",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assignee_id",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "raw",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "cursor",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "thread_id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MailThreadResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Mail"
+        ]
       }
     }
   },
@@ -1442,29 +2274,49 @@
     "title": "Poozle",
     "description": "The poozle API description",
     "version": "1.0",
-    "contact": { }
+    "contact": {}
   },
-  "tags": [ ],
-  "servers": [ ],
+  "tags": [],
+  "servers": [],
   "components": {
     "schemas": {
       "CreateUserInput": {
         "type": "object",
         "properties": {
-          "firstname": { "type": "string" },
-          "lastname": { "type": "string" },
-          "email": { "type": "string" }
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
         },
-        "required": [ "firstname", "lastname", "email" ]
+        "required": [
+          "firstname",
+          "lastname",
+          "email"
+        ]
       },
       "Workspace": {
         "type": "object",
         "properties": {
-          "workspaceId": { "type": "string" },
-          "slug": { "type": "string" },
-          "userId": { "type": "string" },
-          "initialSetupComplete": { "type": "boolean" },
-          "anonymousDataCollection": { "type": "boolean" },
+          "workspaceId": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "initialSetupComplete": {
+            "type": "boolean"
+          },
+          "anonymousDataCollection": {
+            "type": "boolean"
+          },
           "deleted": {
             "format": "date-time",
             "type": "string",
@@ -1483,15 +2335,33 @@
       "User": {
         "type": "object",
         "properties": {
-          "userId": { "type": "string" },
-          "createdAt": { "format": "date-time", "type": "string" },
-          "updatedAt": { "format": "date-time", "type": "string" },
-          "firstname": { "type": "string", "nullable": true },
-          "lastname": { "type": "string", "nullable": true },
-          "email": { "type": "string" },
+          "userId": {
+            "type": "string"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "firstname": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastname": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string"
+          },
           "Workspace": {
             "type": "array",
-            "items": { "$ref": "#/components/schemas/Workspace" }
+            "items": {
+              "$ref": "#/components/schemas/Workspace"
+            }
           }
         },
         "required": [
@@ -1506,30 +2376,63 @@
       "CreateTokenBody": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
-          "seconds": { "type": "number" }
+          "name": {
+            "type": "string"
+          },
+          "seconds": {
+            "type": "number"
+          }
         },
-        "required": [ "name", "seconds" ]
+        "required": [
+          "name",
+          "seconds"
+        ]
       },
       "IntegrationDefinition": {
         "type": "object",
         "properties": {
-          "integrationDefinitionId": { "type": "string" },
-          "name": { "type": "string" },
-          "key": { "type": "string" },
-          "icon": { "type": "string", "nullable": true },
-          "version": { "type": "string" },
-          "releaseStage": { "type": "object" },
-          "sourceUrl": { "type": "string" },
-          "integrationType": { "type": "object" },
-          "workspaceId": { "type": "string", "nullable": true },
+          "integrationDefinitionId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "version": {
+            "type": "string"
+          },
+          "releaseStage": {
+            "type": "object"
+          },
+          "sourceUrl": {
+            "type": "string"
+          },
+          "integrationType": {
+            "type": "object"
+          },
+          "workspaceId": {
+            "type": "string",
+            "nullable": true
+          },
           "deleted": {
             "format": "date-time",
             "type": "string",
             "nullable": true
           },
-          "createdAt": { "format": "date-time", "type": "string" },
-          "updatedAt": { "format": "date-time", "type": "string" }
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          }
         },
         "required": [
           "integrationDefinitionId",
@@ -1549,22 +2452,41 @@
       "IntegrationAccount": {
         "type": "object",
         "properties": {
-          "integrationAccountId": { "type": "string" },
+          "integrationAccountId": {
+            "type": "string"
+          },
           "integrationDefinition": {
             "$ref": "#/components/schemas/IntegrationDefinition"
           },
-          "integrationDefinitionId": { "type": "string" },
-          "integrationConfiguration": { "type": "object", "nullable": true },
-          "authType": { "type": "string" },
-          "workspaceId": { "type": "string" },
-          "integrationAccountName": { "type": "string" },
+          "integrationDefinitionId": {
+            "type": "string"
+          },
+          "integrationConfiguration": {
+            "type": "object",
+            "nullable": true
+          },
+          "authType": {
+            "type": "string"
+          },
+          "workspaceId": {
+            "type": "string"
+          },
+          "integrationAccountName": {
+            "type": "string"
+          },
           "deleted": {
             "format": "date-time",
             "type": "string",
             "nullable": true
           },
-          "createdAt": { "format": "date-time", "type": "string" },
-          "updatedAt": { "format": "date-time", "type": "string" },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
           "integrationConnectLinkIntegrationConnectionLinkId": {
             "type": "string",
             "nullable": true
@@ -1586,10 +2508,18 @@
       "IntegrationCheckBody": {
         "type": "object",
         "properties": {
-          "integrationDefinitionId": { "type": "string" },
-          "config": { "type": "object" },
-          "authType": { "type": "string" },
-          "workspaceId": { "type": "string" }
+          "integrationDefinitionId": {
+            "type": "string"
+          },
+          "config": {
+            "type": "object"
+          },
+          "authType": {
+            "type": "string"
+          },
+          "workspaceId": {
+            "type": "string"
+          }
         },
         "required": [
           "integrationDefinitionId",
@@ -1601,20 +2531,40 @@
       "UpdateIntegrationAccountBody": {
         "type": "object",
         "properties": {
-          "integrationAccountName": { "type": "string" },
-          "authType": { "type": "string" },
-          "config": { "type": "object" }
+          "integrationAccountName": {
+            "type": "string"
+          },
+          "authType": {
+            "type": "string"
+          },
+          "config": {
+            "type": "object"
+          }
         },
-        "required": [ "integrationAccountName", "authType", "config" ]
+        "required": [
+          "integrationAccountName",
+          "authType",
+          "config"
+        ]
       },
       "CreateIntegrationAccountBody": {
         "type": "object",
         "properties": {
-          "integrationDefinitionId": { "type": "string" },
-          "integrationAccountName": { "type": "string" },
-          "authType": { "type": "string" },
-          "workspaceId": { "type": "string" },
-          "config": { "type": "object" }
+          "integrationDefinitionId": {
+            "type": "string"
+          },
+          "integrationAccountName": {
+            "type": "string"
+          },
+          "authType": {
+            "type": "string"
+          },
+          "workspaceId": {
+            "type": "string"
+          },
+          "config": {
+            "type": "object"
+          }
         },
         "required": [
           "integrationDefinitionId",
@@ -1627,42 +2577,85 @@
       "ProxyBody": {
         "type": "object",
         "properties": {
-          "method": { "type": "string" },
-          "path": { "type": "string" },
-          "postBody": { "type": "object" }
+          "method": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "postBody": {
+            "type": "object"
+          }
         },
-        "required": [ "method", "path" ]
+        "required": [
+          "method",
+          "path"
+        ]
       },
       "IntegrationDefinitionCreateBody": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
-          "sourceUrl": { "type": "string" },
-          "integrationType": { "type": "object" },
-          "workspaceId": { "type": "string" }
+          "name": {
+            "type": "string"
+          },
+          "sourceUrl": {
+            "type": "string"
+          },
+          "integrationType": {
+            "type": "object"
+          },
+          "workspaceId": {
+            "type": "string"
+          }
         },
-        "required": [ "name", "sourceUrl", "integrationType", "workspaceId" ]
+        "required": [
+          "name",
+          "sourceUrl",
+          "integrationType",
+          "workspaceId"
+        ]
       },
       "IntegrationOAuthApp": {
         "type": "object",
         "properties": {
-          "integrationOAuthAppId": { "type": "string" },
-          "integrationOAuthAppName": { "type": "string" },
+          "integrationOAuthAppId": {
+            "type": "string"
+          },
+          "integrationOAuthAppName": {
+            "type": "string"
+          },
           "integrationDefinition": {
             "$ref": "#/components/schemas/IntegrationDefinition"
           },
-          "integrationDefinitionId": { "type": "string" },
-          "clientId": { "type": "string" },
-          "clientSecret": { "type": "string" },
-          "scopes": { "type": "string" },
-          "workspaceId": { "type": "string", "nullable": true },
+          "integrationDefinitionId": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "clientSecret": {
+            "type": "string"
+          },
+          "scopes": {
+            "type": "string"
+          },
+          "workspaceId": {
+            "type": "string",
+            "nullable": true
+          },
           "deleted": {
             "format": "date-time",
             "type": "string",
             "nullable": true
           },
-          "createdAt": { "format": "date-time", "type": "string" },
-          "updatedAt": { "format": "date-time", "type": "string" }
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          }
         },
         "required": [
           "integrationOAuthAppId",
@@ -1680,12 +2673,24 @@
       "IntegrationOAuthCreateBody": {
         "type": "object",
         "properties": {
-          "workspaceId": { "type": "string" },
-          "integrationDefinitionId": { "type": "string" },
-          "clientId": { "type": "string" },
-          "clientSecret": { "type": "string" },
-          "scopes": { "type": "string" },
-          "integrationOAuthAppName": { "type": "string" }
+          "workspaceId": {
+            "type": "string"
+          },
+          "integrationDefinitionId": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "clientSecret": {
+            "type": "string"
+          },
+          "scopes": {
+            "type": "string"
+          },
+          "integrationOAuthAppName": {
+            "type": "string"
+          }
         },
         "required": [
           "integrationDefinitionId",
@@ -1698,10 +2703,18 @@
       "IntegrationOAuthRequestUpdateBody": {
         "type": "object",
         "properties": {
-          "clientId": { "type": "string" },
-          "clientSecret": { "type": "string" },
-          "scopes": { "type": "string" },
-          "integrationOAuthAppName": { "type": "string" }
+          "clientId": {
+            "type": "string"
+          },
+          "clientSecret": {
+            "type": "string"
+          },
+          "scopes": {
+            "type": "string"
+          },
+          "integrationOAuthAppName": {
+            "type": "string"
+          }
         },
         "required": [
           "clientId",
@@ -1713,12 +2726,29 @@
       "IntegrationConnectLink": {
         "type": "object",
         "properties": {
-          "integrationConnectionLinkId": { "type": "string" },
-          "expiresIn": { "type": "number" },
-          "category": { "type": "array", "items": { "type": "object" } },
-          "workspaceId": { "type": "string" },
-          "createdAt": { "format": "date-time", "type": "string" },
-          "updatedAt": { "format": "date-time", "type": "string" }
+          "integrationConnectionLinkId": {
+            "type": "string"
+          },
+          "expiresIn": {
+            "type": "number"
+          },
+          "category": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "workspaceId": {
+            "type": "string"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          }
         },
         "required": [
           "integrationConnectionLinkId",
@@ -1732,22 +2762,49 @@
       "CreateIntegrationConnectLinkBody": {
         "type": "object",
         "properties": {
-          "category": { "type": "array", "items": { "type": "object" } },
-          "expires": { "type": "number" },
-          "workspaceId": { "type": "string" }
+          "category": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "expires": {
+            "type": "number"
+          },
+          "workspaceId": {
+            "type": "string"
+          }
         },
-        "required": [ "category", "expires", "workspaceId" ]
+        "required": [
+          "category",
+          "expires",
+          "workspaceId"
+        ]
       },
       "Collection": {
         "type": "object",
         "properties": {
-          "id": { "type": "string" },
-          "parent_id": { "type": "string" },
-          "type": { "type": "string" },
-          "name": { "type": "string" },
-          "description": { "type": "string" },
-          "updated_at": { "type": "string" },
-          "created_at": { "type": "string" }
+          "id": {
+            "type": "string"
+          },
+          "parent_id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          }
         },
         "required": [
           "id",
@@ -1762,45 +2819,85 @@
       "Meta": {
         "type": "object",
         "properties": {
-          "limit": { "type": "number" },
+          "limit": {
+            "type": "number"
+          },
           "cursors": {
             "type": "object",
             "properties": {
-              "before": { "type": "string" },
-              "current": { "type": "string" },
-              "next": { "type": "string" }
+              "before": {
+                "type": "string"
+              },
+              "current": {
+                "type": "string"
+              },
+              "next": {
+                "type": "string"
+              }
             }
           }
         },
-        "required": [ "limit", "cursors" ]
+        "required": [
+          "limit",
+          "cursors"
+        ]
       },
       "TicketingCollectionsResponse": {
         "type": "object",
         "properties": {
           "data": {
             "type": "array",
-            "items": { "$ref": "#/components/schemas/Collection" }
+            "items": {
+              "$ref": "#/components/schemas/Collection"
+            }
           },
-          "meta": { "$ref": "#/components/schemas/Meta" }
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
         },
-        "required": [ "data", "meta" ]
+        "required": [
+          "data",
+          "meta"
+        ]
       },
       "TicketingCollectionResponse": {
         "type": "object",
-        "properties": { "data": { "$ref": "#/components/schemas/Collection" } },
-        "required": [ "data" ]
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Collection"
+          }
+        },
+        "required": [
+          "data"
+        ]
       },
       "TicketingUser": {
         "type": "object",
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
-          "first_name": { "type": "string" },
-          "last_name": { "type": "string" },
-          "email": { "type": "string" },
-          "photo_url": { "type": "string" },
-          "updated_at": { "type": "string" },
-          "created_at": { "type": "string" }
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "photo_url": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          }
         },
         "required": [
           "id",
@@ -1816,99 +2913,199 @@
       "TicketingUserResponse": {
         "type": "object",
         "properties": {
-          "data": { "$ref": "#/components/schemas/TicketingUser" }
+          "data": {
+            "$ref": "#/components/schemas/TicketingUser"
+          }
         },
-        "required": [ "data" ]
+        "required": [
+          "data"
+        ]
       },
       "TicketingUsersResponse": {
         "type": "object",
         "properties": {
           "data": {
             "type": "array",
-            "items": { "$ref": "#/components/schemas/TicketingUser" }
+            "items": {
+              "$ref": "#/components/schemas/TicketingUser"
+            }
           },
-          "meta": { "$ref": "#/components/schemas/Meta" }
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
         },
-        "required": [ "data", "meta" ]
+        "required": [
+          "data",
+          "meta"
+        ]
       },
       "Member": {
         "type": "object",
         "properties": {
-          "id": { "type": "string" },
-          "username": { "type": "string" }
+          "id": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          }
         },
-        "required": [ "id", "username" ]
+        "required": [
+          "id",
+          "username"
+        ]
       },
       "Team": {
         "type": "object",
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
-          "description": { "type": "string" },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
           "members": {
             "type": "array",
-            "items": { "$ref": "#/components/schemas/Member" }
+            "items": {
+              "$ref": "#/components/schemas/Member"
+            }
           }
         },
-        "required": [ "id", "name", "description", "members" ]
+        "required": [
+          "id",
+          "name",
+          "description",
+          "members"
+        ]
       },
       "TicketingTeamsResponse": {
         "type": "object",
         "properties": {
           "data": {
             "type": "array",
-            "items": { "$ref": "#/components/schemas/Team" }
+            "items": {
+              "$ref": "#/components/schemas/Team"
+            }
           },
-          "meta": { "$ref": "#/components/schemas/Meta" }
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
         },
-        "required": [ "data", "meta" ]
+        "required": [
+          "data",
+          "meta"
+        ]
       },
       "TicketingTeamResponse": {
         "type": "object",
-        "properties": { "data": { "$ref": "#/components/schemas/Team" } },
-        "required": [ "data" ]
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Team"
+          }
+        },
+        "required": [
+          "data"
+        ]
       },
       "UpdateTeamBody": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
-          "description": { "type": "string" },
-          "memberts": { "type": "array", "items": { "type": "object" } }
-        },
-        "required": [ "name", "description", "memberts" ]
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
       },
       "CreateTeamBody": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
-          "description": { "type": "string" },
-          "memberts": { "type": "array", "items": { "type": "object" } }
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
         },
-        "required": [ "name", "description", "memberts" ]
+        "required": [
+          "name",
+          "description"
+        ]
       },
       "TicketingTicketsResponse": {
         "type": "object",
         "properties": {
-          "data": { "type": "array", "items": { "type": "object" } },
-          "meta": { "$ref": "#/components/schemas/Meta" }
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
         },
-        "required": [ "data", "meta" ]
+        "required": [
+          "data",
+          "meta"
+        ]
       },
       "TicketingTicketResponse": {
         "type": "object",
-        "properties": { "data": { "type": "object" } },
-        "required": [ "data" ]
+        "properties": {
+          "data": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "data"
+        ]
       },
       "UpdateTicketBody": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
-          "description": { "type": "string" },
-          "assignees": { "type": "array", "items": { "type": "object" } },
-          "tags": { "type": "array", "items": { "type": "object" } },
-          "status": { "type": "string" },
-          "created_by": { "type": "string" },
-          "type": { "type": "string" }
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "assignees": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "status": {
+            "type": "string"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
         },
         "required": [
           "name",
@@ -1923,16 +3120,32 @@
       "CreateTicketBody": {
         "type": "object",
         "properties": {
-          "collection_id": { "type": "string" },
-          "name": { "type": "string" },
-          "description": { "type": "string" },
-          "assignees": { "type": "array", "items": { "type": "object" } },
-          "tags": { "type": "array", "items": { "type": "object" } },
-          "created_by": { "type": "string" },
-          "type": { "type": "string" }
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "assignees": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
         },
         "required": [
-          "collection_id",
           "name",
           "description",
           "assignees",
@@ -1944,15 +3157,33 @@
       "Comment": {
         "type": "object",
         "properties": {
-          "id": { "type": "string" },
-          "ticket_id": { "type": "string" },
-          "body": { "type": "string" },
-          "html_body": { "type": "string" },
-          "created_by_id": { "type": "string" },
-          "created_by": { "type": "object" },
-          "is_private": { "type": "string" },
-          "created_at": { "type": "string" },
-          "updated_at": { "type": "string" }
+          "id": {
+            "type": "string"
+          },
+          "ticket_id": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "html_body": {
+            "type": "string"
+          },
+          "created_by_id": {
+            "type": "string"
+          },
+          "created_by": {
+            "type": "object"
+          },
+          "is_private": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
         },
         "required": [
           "id",
@@ -1971,70 +3202,384 @@
         "properties": {
           "data": {
             "type": "array",
-            "items": { "$ref": "#/components/schemas/Comment" }
+            "items": {
+              "$ref": "#/components/schemas/Comment"
+            }
           },
-          "meta": { "$ref": "#/components/schemas/Meta" }
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
         },
-        "required": [ "data", "meta" ]
+        "required": [
+          "data",
+          "meta"
+        ]
       },
       "TicketingCommentResponse": {
         "type": "object",
-        "properties": { "data": { "$ref": "#/components/schemas/Comment" } },
-        "required": [ "data" ]
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Comment"
+          }
+        },
+        "required": [
+          "data"
+        ]
       },
       "UpdateCommentBody": {
         "type": "object",
-        "properties": { "body": { "type": "string" } },
-        "required": [ "body" ]
+        "properties": {
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "body"
+        ]
       },
       "CreateCommentBody": {
         "type": "object",
-        "properties": { "body": { "type": "string" } },
-        "required": [ "body" ]
+        "properties": {
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "body"
+        ]
       },
       "Tag": {
         "type": "object",
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
-          "description": { "type": "string" },
-          "color": { "type": "string" }
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          }
         },
-        "required": [ "id", "name", "description", "color" ]
+        "required": [
+          "id",
+          "name",
+          "description",
+          "color"
+        ]
       },
       "TicketingTagsResponse": {
         "type": "object",
         "properties": {
           "data": {
             "type": "array",
-            "items": { "$ref": "#/components/schemas/Tag" }
+            "items": {
+              "$ref": "#/components/schemas/Tag"
+            }
           },
-          "meta": { "$ref": "#/components/schemas/Meta" }
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
         },
-        "required": [ "data", "meta" ]
+        "required": [
+          "data",
+          "meta"
+        ]
       },
       "TicketingTagResponse": {
         "type": "object",
-        "properties": { "data": { "$ref": "#/components/schemas/Tag" } },
-        "required": [ "data" ]
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Tag"
+          }
+        },
+        "required": [
+          "data"
+        ]
       },
       "UpdateTagBody": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
-          "description": { "type": "string" },
-          "color": { "type": "string" }
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          }
         },
-        "required": [ "name", "description", "color" ]
+        "required": [
+          "name",
+          "description",
+          "color"
+        ]
       },
       "CreateTagBody": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
-          "description": { "type": "string" },
-          "color": { "type": "string" }
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          }
         },
-        "required": [ "name", "description", "color" ]
+        "required": [
+          "name",
+          "description",
+          "color"
+        ]
+      },
+      "Recipient": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "name"
+        ]
+      },
+      "Message": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "html_body": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "snippet": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "thread_id": {
+            "type": "string"
+          },
+          "starred": {
+            "type": "boolean"
+          },
+          "unread": {
+            "type": "boolean"
+          },
+          "cc": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Recipient"
+            }
+          },
+          "bcc": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Recipient"
+            }
+          },
+          "from": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Recipient"
+            }
+          },
+          "reply_to": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Recipient"
+            }
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "in_reply_to": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "body",
+          "html_body",
+          "user_id",
+          "date",
+          "snippet",
+          "subject",
+          "thread_id",
+          "starred",
+          "unread",
+          "cc",
+          "bcc",
+          "from",
+          "reply_to",
+          "labels",
+          "in_reply_to"
+        ]
+      },
+      "MailMessagesResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ]
+      },
+      "MailMessageResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Message"
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "CreateMessageBody": {
+        "type": "object",
+        "properties": {
+          "subject": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "html_body": {
+            "type": "string"
+          },
+          "thread": {
+            "type": "string"
+          },
+          "cc": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Recipient"
+            }
+          },
+          "bcc": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Recipient"
+            }
+          },
+          "from": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Recipient"
+            }
+          },
+          "to": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Recipient"
+            }
+          },
+          "reply_to": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Recipient"
+            }
+          },
+          "in_reply_to": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject",
+          "body",
+          "html_body",
+          "thread",
+          "cc",
+          "bcc",
+          "from",
+          "to",
+          "reply_to",
+          "in_reply_to"
+        ]
+      },
+      "Thread": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "history_id": {
+            "type": "string"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "history_id",
+          "messages"
+        ]
+      },
+      "MailThreadsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Thread"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ]
+      },
+      "MailThreadResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Thread"
+          }
+        },
+        "required": [
+          "data"
+        ]
       }
     }
   }

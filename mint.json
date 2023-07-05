@@ -29,6 +29,10 @@
     {
       "name": "Ticketing",
       "url": "ticketing"
+    },
+    {
+      "name": "Mail",
+      "url": "mail"
     }
   ],
   "navigation": [
@@ -62,11 +66,11 @@
     },
     {
       "group": "Get Started",
-      "pages": [ "ticketing/overview" ]
+      "pages": [ "ticketing/overview", "mail/overview" ]
     },
     {
       "group": "Integrations",
-      "pages": [ "ticketing/integrations/github", "ticketing/integrations/jira" ]
+      "pages": [ "ticketing/integrations/github", "ticketing/integrations/jira", "mail/integration/gmail" ]
     },
     {
       "group": "Collection",
@@ -91,6 +95,14 @@
     {
       "group": "Tag",
       "pages": [ "ticketing/tag/get_tags", "ticketing/tag/get_tag", "ticketing/tag/create_tag", "ticketing/tag/update_tag" ]
+    },
+    {
+      "group": "Message",
+      "pages": ["mail/messages/get_messages", "mail/messages/get_message", "mail/messages/create_message"]
+    },
+    {
+      "group": "Threads",
+      "pages": ["mail/threads/get_threads", "mail/threads/get_thread"]
     }
   ],
   "footerSocials": {
