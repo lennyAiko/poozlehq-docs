@@ -49,6 +49,10 @@
       "pages": [ "contributing/code-of-conduct", "contributing/issues-prs" ]
     },
     {
+      "group": "Understanding Poozle",
+      "pages": [ "understanding-poozle/protocol" ]
+    },
+    {
       "group": "API Documentation",
       "pages": [ "api-reference/overview", "api-reference/authentication" ]
     },
