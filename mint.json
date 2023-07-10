@@ -134,7 +134,7 @@
     },
     {
       "group": "Block",
-      "pages": [ "documentation/blocks/get_blocks", "documentation/blocks/get_block", "documentation/blocks/create_block" ]
+      "pages": [ "documentation/blocks/get_block", "documentation/blocks/update_block", "documentation/blocks/create_block" ]
     }
   ],
   "footerSocials": {
