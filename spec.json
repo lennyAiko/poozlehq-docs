@@ -4,7 +4,7 @@
     "/health": {
       "get": {
         "operationId": "AppController_health",
-        "parameters": [],
+        "parameters": [ ],
         "responses": {
           "200": {
             "description": ""
@@ -15,7 +15,7 @@
     "/v1/user": {
       "post": {
         "operationId": "UserController_createUser",
-        "parameters": [],
+        "parameters": [ ],
         "requestBody": {
           "required": true,
           "content": {
@@ -44,7 +44,7 @@
       },
       "get": {
         "operationId": "UserController_getUser",
-        "parameters": [],
+        "parameters": [ ],
         "responses": {
           "200": {
             "description": "",
@@ -65,7 +65,7 @@
     "/v1/user/token": {
       "post": {
         "operationId": "UserController_createJWT",
-        "parameters": [],
+        "parameters": [ ],
         "requestBody": {
           "required": true,
           "content": {
@@ -127,7 +127,7 @@
       },
       "post": {
         "operationId": "IntegrationAccountController_createIntegrationAccount",
-        "parameters": [],
+        "parameters": [ ],
         "requestBody": {
           "required": true,
           "content": {
@@ -226,7 +226,7 @@
     "/v1/integration_account/check": {
       "post": {
         "operationId": "IntegrationAccountController_checkCredentialsForIntegrationAccount",
-        "parameters": [],
+        "parameters": [ ],
         "requestBody": {
           "required": true,
           "content": {
@@ -254,12 +254,12 @@
         ]
       }
     },
-    "/v1/integration_account/{integrationAccountId}/proxy": {
+    "/v1/integration_account/link/{linkId}": {
       "post": {
-        "operationId": "IntegrationAccountController_proxyPost",
+        "operationId": "IntegrationAccountController_createIntegrationAccountWithLink",
         "parameters": [
           {
-            "name": "integrationAccountId",
+            "name": "linkId",
             "required": true,
             "in": "path",
             "schema": {
@@ -272,13 +272,148 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProxyBody"
+                "$ref": "#/components/schemas/CreateIntegrationAccountWithLinkBody"
               }
             }
           }
         },
         "responses": {
           "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationAccount"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Integration Account"
+        ]
+      }
+    },
+    "/v1/integration_account/{integrationAccountId}/proxy/*": {
+      "get": {
+        "operationId": "IntegrationAccountController_proxyPost_get",
+        "parameters": [ ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Integration Account"
+        ]
+      },
+      "post": {
+        "operationId": "IntegrationAccountController_proxyPost_post",
+        "parameters": [ ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Integration Account"
+        ]
+      },
+      "put": {
+        "operationId": "IntegrationAccountController_proxyPost_put",
+        "parameters": [ ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Integration Account"
+        ]
+      },
+      "delete": {
+        "operationId": "IntegrationAccountController_proxyPost_delete",
+        "parameters": [ ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Integration Account"
+        ]
+      },
+      "patch": {
+        "operationId": "IntegrationAccountController_proxyPost_patch",
+        "parameters": [ ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Integration Account"
+        ]
+      },
+      "options": {
+        "operationId": "IntegrationAccountController_proxyPost_options",
+        "parameters": [ ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Integration Account"
+        ]
+      },
+      "head": {
+        "operationId": "IntegrationAccountController_proxyPost_head",
+        "parameters": [ ],
+        "responses": {
+          "200": {
             "description": "",
             "content": {
               "application/json": {
@@ -305,6 +440,17 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "category",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
           }
         ],
         "responses": {
@@ -315,7 +461,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/IntegrationDefinition"
+                    "$ref": "#/components/schemas/IntegrationDefinitionResponse"
                   }
                 }
               }
@@ -328,7 +474,7 @@
       },
       "post": {
         "operationId": "IntegrationDefinitionController_createIntegrationDefinition",
-        "parameters": [],
+        "parameters": [ ],
         "requestBody": {
           "required": true,
           "content": {
@@ -346,6 +492,93 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/IntegrationDefinition"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Integration Definition"
+        ]
+      }
+    },
+    "/v1/integration_definition/{integrationDefinitionId}": {
+      "post": {
+        "operationId": "IntegrationDefinitionController_updateIntegrationDefinition",
+        "parameters": [
+          {
+            "name": "integrationDefinitionId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntegrationDefinitionUpdateBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Integration Definition"
+        ]
+      },
+      "get": {
+        "operationId": "IntegrationDefinitionController_getIntegrationDefinitionWithId",
+        "parameters": [
+          {
+            "name": "integrationDefinitionId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "workspaceId",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "category",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationDefinitionResponse"
                 }
               }
             }
@@ -375,6 +608,17 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "category",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
           }
         ],
         "responses": {
@@ -394,18 +638,69 @@
         ]
       }
     },
-    "/v1/integration_definition/{integrationDefinitionId}": {
+    "/v1/link/{linkId}": {
       "get": {
-        "operationId": "IntegrationDefinitionController_getIntegrationDefinitionWithId",
+        "operationId": "LinkController_getLink",
         "parameters": [
           {
-            "name": "integrationDefinitionId",
+            "name": "linkId",
             "required": true,
             "in": "path",
             "schema": {
               "type": "string"
             }
-          },
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Link"
+        ]
+      }
+    },
+    "/v1/link": {
+      "post": {
+        "operationId": "LinkController_createLink",
+        "parameters": [ ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLinkBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Link"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Link"
+        ]
+      },
+      "get": {
+        "operationId": "LinkController_getLinksForWorkspace",
+        "parameters": [
           {
             "name": "workspaceId",
             "required": true,
@@ -421,14 +716,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LinkResponse"
+                  }
                 }
               }
             }
           }
         },
         "tags": [
-          "Integration Definition"
+          "Link"
         ]
       }
     },
@@ -466,7 +764,7 @@
       },
       "post": {
         "operationId": "IntegrationOAuthController_createIntegrationOAuthApp",
-        "parameters": [],
+        "parameters": [ ],
         "requestBody": {
           "required": true,
           "content": {
@@ -484,6 +782,39 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/IntegrationOAuthApp"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Integration OAuth Apps"
+        ]
+      }
+    },
+    "/v1/integration_oauth/just_ids": {
+      "get": {
+        "operationId": "IntegrationOAuthController_getIntegrationOAuthByWorkspaceJustIds",
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IntegrationOAuthAppsFlat"
+                  }
                 }
               }
             }
@@ -570,74 +901,41 @@
         ]
       }
     },
-    "/v1/integration_connect_link/{integrationConnectLinkId}": {
-      "get": {
-        "operationId": "IntegrationConnectLinkController_getIntegrationConnectLink",
-        "parameters": [
-          {
-            "name": "integrationConnectLinkId",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "workspaceId",
-            "required": true,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IntegrationConnectLink"
-                }
+    "/v1/oauth": {
+      "post": {
+        "operationId": "OAuthCallbackController_getRedirectURL",
+        "parameters": [ ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BodyInterface"
               }
             }
           }
         },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
         "tags": [
-          "Integration Connect Link"
+          "OAuth Utils"
         ]
       }
     },
-    "/v1/integration_connect_link": {
-      "post": {
-        "operationId": "IntegrationConnectLinkController_getIntegrationConnectLinksForWorkspace",
-        "parameters": [
-          {
-            "name": "workspaceId",
-            "required": true,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+    "/v1/oauth/callback": {
+      "get": {
+        "operationId": "OAuthCallbackController_callback",
+        "parameters": [ ],
         "responses": {
-          "201": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IntegrationConnectLink"
-                  }
-                }
-              }
-            }
+          "200": {
+            "description": ""
           }
         },
         "tags": [
-          "Integration Connect Link"
+          "OAuth Utils"
         ]
       }
     },
@@ -1949,118 +2247,11 @@
         "operationId": "MessagesController_getMessageId",
         "parameters": [
           {
-            "name": "received_after",
-            "required": false,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "received_before",
-            "required": false,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "subject",
-            "required": false,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "from",
-            "required": false,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "to",
-            "required": false,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "cc",
-            "required": false,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "bcc",
-            "required": false,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "labes",
-            "required": false,
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          {
-            "name": "starred",
-            "required": false,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "unread",
-            "required": false,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "direction",
-            "required": false,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "raw",
             "required": false,
             "in": "query",
             "schema": {
               "type": "boolean"
-            }
-          },
-          {
-            "name": "cursor",
-            "required": false,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "limit",
-            "required": false,
-            "in": "query",
-            "schema": {
-              "type": "number"
             }
           },
           {
@@ -2268,16 +2459,311 @@
           "Mail"
         ]
       }
+    },
+    "/v1/documentation/pages": {
+      "get": {
+        "operationId": "PageController_getPages",
+        "parameters": [
+          {
+            "name": "title",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "cursor",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "direction",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "raw",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagesResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Documentation"
+        ]
+      },
+      "post": {
+        "operationId": "PageController_createPage",
+        "parameters": [
+          {
+            "name": "raw",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePageBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Documentation"
+        ]
+      }
+    },
+    "/v1/documentation/pages/{page_id}": {
+      "get": {
+        "operationId": "PageController_getPageeId",
+        "parameters": [
+          {
+            "name": "raw",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "page_id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Documentation"
+        ]
+      }
+    },
+    "/v1/documentation/blocks/{block_id}": {
+      "get": {
+        "operationId": "BlockController_getBlocks",
+        "parameters": [
+          {
+            "name": "cursor",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "raw",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "block_id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlocksResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Documentation"
+        ]
+      },
+      "post": {
+        "operationId": "BlockController_createBlocks",
+        "parameters": [
+          {
+            "name": "raw",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "block_id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePageBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlocksResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Documentation"
+        ]
+      },
+      "patch": {
+        "operationId": "BlockController_updateBlock",
+        "parameters": [
+          {
+            "name": "raw",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "block_id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePageBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlocksResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Documentation"
+        ]
+      }
     }
   },
   "info": {
     "title": "Poozle",
     "description": "The poozle API description",
     "version": "1.0",
-    "contact": {}
+    "contact": { }
   },
-  "tags": [],
-  "servers": [],
+  "tags": [ ],
+  "servers": [ ],
   "components": {
     "schemas": {
       "CreateUserInput": {
@@ -2487,7 +2973,7 @@
             "format": "date-time",
             "type": "string"
           },
-          "integrationConnectLinkIntegrationConnectionLinkId": {
+          "linkId": {
             "type": "string",
             "nullable": true
           }
@@ -2502,7 +2988,53 @@
           "deleted",
           "createdAt",
           "updatedAt",
-          "integrationConnectLinkIntegrationConnectionLinkId"
+          "linkId"
+        ]
+      },
+      "Link": {
+        "type": "object",
+        "properties": {
+          "linkId": {
+            "type": "string"
+          },
+          "linkName": {
+            "type": "string"
+          },
+          "expiresIn": {
+            "type": "number"
+          },
+          "category": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "workspaceId": {
+            "type": "string"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "IntegrationAccount": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationAccount"
+            }
+          }
+        },
+        "required": [
+          "linkId",
+          "linkName",
+          "expiresIn",
+          "category",
+          "workspaceId",
+          "createdAt",
+          "updatedAt"
         ]
       },
       "IntegrationCheckBody": {
@@ -2574,22 +3106,115 @@
           "config"
         ]
       },
-      "ProxyBody": {
+      "CreateIntegrationAccountWithLinkBody": {
         "type": "object",
         "properties": {
-          "method": {
+          "integrationDefinitionId": {
             "type": "string"
           },
-          "path": {
+          "integrationAccountName": {
             "type": "string"
           },
-          "postBody": {
+          "authType": {
+            "type": "string"
+          },
+          "config": {
             "type": "object"
           }
         },
         "required": [
-          "method",
-          "path"
+          "integrationDefinitionId",
+          "integrationAccountName",
+          "authType",
+          "config"
+        ]
+      },
+      "IntegrationDefinitionResponse": {
+        "type": "object",
+        "properties": {
+          "integrationDefinitionId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "version": {
+            "type": "string"
+          },
+          "releaseStage": {
+            "type": "object"
+          },
+          "sourceUrl": {
+            "type": "string"
+          },
+          "integrationType": {
+            "type": "object"
+          },
+          "workspaceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "deleted": {
+            "format": "date-time",
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "isLatest": {
+            "type": "boolean"
+          },
+          "latestVersion": {
+            "type": "string"
+          },
+          "latestVersionSource": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "integrationDefinitionId",
+          "name",
+          "key",
+          "icon",
+          "version",
+          "releaseStage",
+          "sourceUrl",
+          "integrationType",
+          "workspaceId",
+          "deleted",
+          "createdAt",
+          "updatedAt",
+          "isLatest",
+          "latestVersion",
+          "latestVersionSource"
+        ]
+      },
+      "IntegrationDefinitionUpdateBody": {
+        "type": "object",
+        "properties": {
+          "sourceUrl": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sourceUrl",
+          "version"
         ]
       },
       "IntegrationDefinitionCreateBody": {
@@ -2613,6 +3238,101 @@
           "sourceUrl",
           "integrationType",
           "workspaceId"
+        ]
+      },
+      "LinkResponse": {
+        "type": "object",
+        "properties": {
+          "linkId": {
+            "type": "string"
+          },
+          "linkName": {
+            "type": "string"
+          },
+          "expiresIn": {
+            "type": "number"
+          },
+          "category": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "workspaceId": {
+            "type": "string"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "IntegrationAccount": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationAccount"
+            }
+          },
+          "expired": {
+            "type": "boolean"
+          },
+          "integrationAccounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationAccount"
+            }
+          },
+          "integrationDefinitions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationDefinition"
+            }
+          }
+        },
+        "required": [
+          "linkId",
+          "linkName",
+          "expiresIn",
+          "category",
+          "workspaceId",
+          "createdAt",
+          "updatedAt",
+          "expired"
+        ]
+      },
+      "CreateLinkBody": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "integrationDefinitionId": {
+            "type": "string"
+          },
+          "expiresIn": {
+            "type": "number"
+          },
+          "workspaceId": {
+            "type": "string"
+          },
+          "linkIdentifier": {
+            "type": "string"
+          },
+          "linkName": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "category",
+          "expiresIn",
+          "workspaceId",
+          "linkIdentifier",
+          "linkName"
         ]
       },
       "IntegrationOAuthApp": {
@@ -2640,8 +3360,7 @@
             "type": "string"
           },
           "workspaceId": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "deleted": {
             "format": "date-time",
@@ -2668,6 +3387,21 @@
           "deleted",
           "createdAt",
           "updatedAt"
+        ]
+      },
+      "IntegrationOAuthAppsFlat": {
+        "type": "object",
+        "properties": {
+          "integrationDefinitionId": {
+            "type": "string"
+          },
+          "integrationOAuthAppId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "integrationDefinitionId",
+          "integrationOAuthAppId"
         ]
       },
       "IntegrationOAuthCreateBody": {
@@ -2723,62 +3457,32 @@
           "integrationOAuthAppName"
         ]
       },
-      "IntegrationConnectLink": {
+      "BodyInterface": {
         "type": "object",
         "properties": {
-          "integrationConnectionLinkId": {
+          "config": {
+            "type": "object"
+          },
+          "integrationAccountName": {
             "type": "string"
           },
-          "expiresIn": {
-            "type": "number"
-          },
-          "category": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
+          "redirectURL": {
+            "type": "string"
           },
           "workspaceId": {
             "type": "string"
           },
-          "createdAt": {
-            "format": "date-time",
+          "linkId": {
             "type": "string"
           },
-          "updatedAt": {
-            "format": "date-time",
+          "integrationOAuthAppId": {
             "type": "string"
           }
         },
         "required": [
-          "integrationConnectionLinkId",
-          "expiresIn",
-          "category",
-          "workspaceId",
-          "createdAt",
-          "updatedAt"
-        ]
-      },
-      "CreateIntegrationConnectLinkBody": {
-        "type": "object",
-        "properties": {
-          "category": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          },
-          "expires": {
-            "type": "number"
-          },
-          "workspaceId": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "category",
-          "expires",
-          "workspaceId"
+          "integrationAccountName",
+          "redirectURL",
+          "integrationOAuthAppId"
         ]
       },
       "Collection": {
@@ -3047,13 +3751,120 @@
           "description"
         ]
       },
+      "TicketAssignee": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "username"
+        ]
+      },
+      "TicketTag": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      },
+      "Ticket": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "parent_id": {
+            "type": "string"
+          },
+          "collection_id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string"
+          },
+          "ticket_url": {
+            "type": "string"
+          },
+          "assignees": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TicketAssignee"
+            }
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "due_date": {
+            "type": "string"
+          },
+          "completed_at": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TicketTag"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "parent_id",
+          "collection_id",
+          "type",
+          "name",
+          "description",
+          "status",
+          "priority",
+          "ticket_url",
+          "assignees",
+          "updated_at",
+          "created_at",
+          "created_by",
+          "due_date",
+          "completed_at",
+          "tags"
+        ]
+      },
       "TicketingTicketsResponse": {
         "type": "object",
         "properties": {
           "data": {
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/components/schemas/Ticket"
             }
           },
           "meta": {
@@ -3069,7 +3880,7 @@
         "type": "object",
         "properties": {
           "data": {
-            "type": "object"
+            "$ref": "#/components/schemas/Ticket"
           }
         },
         "required": [
@@ -3088,13 +3899,13 @@
           "assignees": {
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/components/schemas/TicketAssignee"
             }
           },
           "tags": {
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/components/schemas/TicketTag"
             }
           },
           "status": {
@@ -3129,13 +3940,13 @@
           "assignees": {
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/components/schemas/TicketAssignee"
             }
           },
           "tags": {
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/components/schemas/TicketTag"
             }
           },
           "created_by": {
@@ -3518,16 +4329,7 @@
           }
         },
         "required": [
-          "subject",
-          "body",
-          "html_body",
-          "thread",
-          "cc",
-          "bcc",
-          "from",
-          "to",
-          "reply_to",
-          "in_reply_to"
+          "subject"
         ]
       },
       "Thread": {
@@ -3579,6 +4381,163 @@
         },
         "required": [
           "data"
+        ]
+      },
+      "Page": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "parent_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "parent_id",
+          "title",
+          "created_by",
+          "created_at",
+          "updated_at",
+          "updated_by"
+        ]
+      },
+      "PagesResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Page"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ]
+      },
+      "PageResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Page"
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "CreatePageBody": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdatePageBody"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "BlocksResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "Annotations": {
+        "type": "object",
+        "properties": {
+          "bold": {
+            "type": "string"
+          },
+          "italic": {
+            "type": "string"
+          },
+          "strikethrough": {
+            "type": "string"
+          },
+          "underline": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "bold",
+          "italic",
+          "strikethrough",
+          "underline",
+          "code",
+          "color"
+        ]
+      },
+      "Content": {
+        "type": "object",
+        "properties": {
+          "annotations": {
+            "$ref": "#/components/schemas/Annotations"
+          },
+          "plain_text": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "annotations",
+          "plain_text",
+          "href"
+        ]
+      },
+      "UpdatePageBody": {
+        "type": "object",
+        "properties": {
+          "block_type": {
+            "type": "string"
+          },
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Content"
+            }
+          }
+        },
+        "required": [
+          "block_type",
+          "content"
         ]
       }
     }

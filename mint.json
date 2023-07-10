@@ -33,6 +33,10 @@
     {
       "name": "Mail",
       "url": "mail"
+    },
+    {
+      "name": "Documentation",
+      "url": "documentation"
     }
   ],
   "navigation": [
@@ -77,12 +81,20 @@
       "pages": [ "mail/overview" ]
     },
     {
+      "group": "Get Started",
+      "pages": [ "documentation/overview" ]
+    },
+    {
       "group": "Integrations",
       "pages": [ "ticketing/integrations/github", "ticketing/integrations/jira" ]
     },
     {
       "group": "Integrations",
       "pages": [ "mail/integrations/gmail" ]
+    },
+    {
+      "group": "Integrations",
+      "pages": [ "documentation/integrations/notion" ]
     },
     {
       "group": "Collection",
@@ -115,6 +127,14 @@
     {
       "group": "Threads",
       "pages": [ "mail/threads/get_threads", "mail/threads/get_thread" ]
+    },
+    {
+      "group": "Pages",
+      "pages": [ "documentation/pages/get_pages", "documentation/pages/get_page", "documentation/pages/create_page" ]
+    },
+    {
+      "group": "Block",
+      "pages": [ "documentation/blocks/get_blocks", "documentation/blocks/get_block", "documentation/blocks/create_block" ]
     }
   ],
   "footerSocials": {
